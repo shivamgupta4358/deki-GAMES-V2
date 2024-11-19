@@ -147,8 +147,103 @@
             <i class="fas fa-arrow-left"></i> Back to Games
         </a>
 
-        <!-- Game Containers -->
-        [Previous game containers remain the same...]
+        <!-- Tic Tac Toe Container -->
+        <div id="tictactoe" class="game-container" style="display: none;">
+            <h2>Tic Tac Toe</h2>
+            <div class="game-mode-selector">
+                <button class="mode-button active" data-mode="pvp">Player vs Player</button>
+                <button class="mode-button" data-mode="pvc">Player vs Computer</button>
+            </div>
+            <div class="score-display">
+                <p class="pvp-score">Player X Wins: <span id="scoreX">0</span></p>
+                <p class="pvp-score">Player O Wins: <span id="scoreO">0</span></p>
+                <p class="pvc-score" style="display: none">Player Wins: <span id="scorePlayer">0</span></p>
+                <p class="pvc-score" style="display: none">Computer Wins: <span id="scoreComputer">0</span></p>
+            </div>
+            <div class="board">
+                <div class="cell" onclick="makeMove(0)"></div>
+                <div class="cell" onclick="makeMove(1)"></div>
+                <div class="cell" onclick="makeMove(2)"></div>
+                <div class="cell" onclick="makeMove(3)"></div>
+                <div class="cell" onclick="makeMove(4)"></div>
+                <div class="cell" onclick="makeMove(5)"></div>
+                <div class="cell" onclick="makeMove(6)"></div>
+                <div class="cell" onclick="makeMove(7)"></div>
+                <div class="cell" onclick="makeMove(8)"></div>
+            </div>
+            <button class="play-button" onclick="resetTicTacToe()">Reset Game</button>
+        </div>
+
+        <!-- Ping Pong Container -->
+        <div id="pingpong" class="game-container" style="display: none;">
+            <h2>Ping Pong</h2>
+            <div class="score-display">
+                <p>Score: <span id="pingpongScore">0</span></p>
+                <p>High Score: <span id="pingpongHighScore">0</span></p>
+            </div>
+            <div class="game-controls">
+                <p>Use <span>W/S</span> or <span>↑/↓</span> to move paddle</p>
+            </div>
+            <canvas id="pingpongCanvas" width="600" height="400"></canvas>
+            <button class="play-button" onclick="startPingPong()">Start Game</button>
+        </div>
+
+        <!-- Snake Container -->
+        <div id="snake" class="game-container" style="display: none;">
+            <h2>Snake Game</h2>
+            <div class="score-display">
+                <p>Score: <span id="snakeScore">0</span></p>
+                <p>High Score: <span id="snakeHighScore">0</span></p>
+            </div>
+            <canvas id="snakeCanvas" width="400" height="400"></canvas>
+            <div class="game-controls">
+                <p>Use <span>Arrow Keys</span> to control the snake</p>
+            </div>
+            <button class="play-button" onclick="startSnake()">Start Game</button>
+        </div>
+
+        <!-- Memory Game Container -->
+        <div id="memory" class="game-container" style="display: none;">
+            <h2>Memory Card Game</h2>
+            <div class="score-display">
+                <p>Moves: <span id="memoryMoves">0</span></p>
+                <p>Best Score: <span id="memoryBest">∞</span></p>
+            </div>
+            <div class="memory-grid"></div>
+            <button class="play-button" onclick="startMemory()">New Game</button>
+        </div>
+
+        <!-- 2048 Container -->
+        <div id="game2048" class="game-container" style="display: none;">
+            <h2>2048</h2>
+            <div class="score-display">
+                <p>Score: <span id="score2048">0</span></p>
+                <p>Best: <span id="best2048">0</span></p>
+            </div>
+            <div class="game2048-grid"></div>
+            <div class="game-controls">
+                <p>Use <span>Arrow Keys</span> or <span>Swipe</span> to move tiles</p>
+            </div>
+            <button class="play-button" onclick="reset2048()">New Game</button>
+        </div>
+
+        <!-- Breakout Container -->
+        <div id="breakout" class="game-container" style="display: none;">
+            <h2>Breakout</h2>
+            <div class="score-display">
+                <p>Level: <span id="breakoutLevel">1</span></p>
+                <p>Score: <span id="breakoutScore">0</span></p>
+                <p>Lives: <span id="breakoutLives">3</span></p>
+            </div>
+            <div class="breakout-container">
+                <canvas id="breakoutCanvas" width="480" height="640"></canvas>
+                <div class="breakout-level-indicator"></div>
+            </div>
+            <div class="game-controls">
+                <p>Use <span>Arrow Keys</span> or <span>Mouse</span> to move paddle</p>
+            </div>
+            <button class="play-button" onclick="startBreakout()">Start Game</button>
+        </div>
 
         <!-- Runner Container -->
         <div id="runner" class="game-container" style="display: none;">
